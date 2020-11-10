@@ -6,8 +6,6 @@ import Main from './Main/Main';
 const MainContainer = () => {
 	const [places, setPlaces] = useState([]);
 	const [inventory, setInventory] = useState([]);
-	const [, updateState] = React.useState();
-	const forceUpdate = React.useCallback(() => updateState({}), []);
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -42,7 +40,7 @@ const MainContainer = () => {
 	}, []);
 
 	return (
-		<Main places={places} inventory={inventory} forceUpdate={forceUpdate} />
+		<Main places={places} inventory={inventory}  />
 	);
 };
 export default MainContainer;
