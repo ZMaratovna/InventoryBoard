@@ -1,0 +1,36 @@
+.board {
+	border: 1px solid lighten($color: rosybrown, $amount: 15);
+	box-shadow: 1px 0px 5px lighten($color: rosybrown, $amount: 15);
+	border-radius: 14px;
+	padding: 40px;
+	width: 40%;
+	height: 80vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	background-color: rgba(255, 241, 235, 0.95);
+	h1 {
+		justify-self: center;
+		align-self: center;
+		color: darkolivegreen;
+	}
+	ul {
+		list-style: none;
+		overflow-y: scroll;
+	}
+}
+
+.addButton {
+	background-color: darkolivegreen;
+	color: white;
+	text-transform: uppercase;
+	border: none;
+	border-radius: 14px;
+	padding: 20px 45px;
+	justify-self: flex-end;
+	align-self: center;
+	&:hover {
+		background-color: lighten(darkolivegreen, 10);
+		cursor: ponter;
+	}
+}

@@ -1,0 +1,35 @@
+.form {
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+	border: 2px solid darkolivegreen;
+	padding: 40px 30px;
+	border-radius: 14px;
+	align-self: center;
+	margin-top: 15px;
+	label {
+		display: flex;
+		flex-direction: column;
+		input {
+			border: none;
+			border-radius: 10px;
+			padding: 8px;
+			outline: none;
+		}
+	}
+	button {
+		background-color: darkolivegreen;
+		color: white;
+		text-transform: uppercase;
+		border: none;
+		border-radius: 14px;
+		padding: 10px 15px;
+		justify-self: flex-end;
+		align-self: center;
+		margin-top: 20px;
+		&:hover {
+			background-color: lighten(darkolivegreen, 10);
+			cursor: ponter;
+		}
+	}
+}
