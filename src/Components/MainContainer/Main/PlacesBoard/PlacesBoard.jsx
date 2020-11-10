@@ -1,6 +1,6 @@
 import React from 'react';
 import s from './placesBoard.module.scss';
-import PlaceItem from './Placetem';
+import PlaceItem from './PlaceItem/PlaceItem';
 const PlacesBoard = (props) => {
 	const [activeTab, setActiveTab] = React.useState('');
 	return (

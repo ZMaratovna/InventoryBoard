@@ -1,5 +1,5 @@
 import React from 'react';
-import { updateEquipment } from '../../../../../Firebase';
+import { updateEquipment } from '../../../../../../Firebase';
 import s from './EditItem.module.scss';
 const EditItem = ({ item, setEditMode }) => {
 	const [quantity, setQuantity] = React.useState(0);

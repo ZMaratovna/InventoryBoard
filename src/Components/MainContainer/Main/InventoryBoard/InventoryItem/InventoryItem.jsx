@@ -1,7 +1,7 @@
 import React from 'react';
 import { removeEquipment } from '../../../../../Firebase';
 
-import EditItem from './EditItem';
+import EditItem from './EditItem/EditItem';
 import s from './InventoryItem.module.scss';
 
 const InventoryItem = ({ item, childNodes }) => {
