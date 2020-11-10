@@ -1,10 +1,16 @@
 import React from 'react';
 import s from './placeItem.module.scss';
 import classNames from 'classnames';
-const PlaceItem = ({ item, currentLocation, location, setChildNodes }) => {
-	const [isActive, setIsActive] = React.useState(false);
+const PlaceItem = ({
+	item,
+	currentLocation,
+	location,
+	setChildNodes,
+	childNodes,
+	isEmpty,
+}) => {
 	let children = null;
-
+	console.log('chilnodes lebgth', childNodes.length);
 	const getChildNodes = async (e) => {
 		if (e.target.childNodes && e.target.childNodes.length !== 1) {
 			const nodes = [];
@@ -34,23 +40,26 @@ const PlaceItem = ({ item, currentLocation, location, setChildNodes }) => {
 		const location = e.target.getAttribute('place');
 
 		currentLocation(location);
-		setIsActive(true);
 		getChildNodes(e);
 	};
 
 	let classNamesForLi = classNames({
-		[s.active]: location === item.id && isActive,
+		[s.active]: location === item.id,
+		[s.empty]: isEmpty,
 	});
 
 	if (item.children && item.children.length) {
 		children = (
-			<ul className={s.innerUl}>
+			<ul className={classNamesForLi}>
 				{item.children.map((i) => (
 					<PlaceItem
 						item={i}
 						key={i.id}
 						currentLocation={currentLocation}
 						setChildNodes={setChildNodes}
+						location={location}
+						childNodes={childNodes}
+						isEmpty={isEmpty}
 					/>
 				))}
 			</ul>

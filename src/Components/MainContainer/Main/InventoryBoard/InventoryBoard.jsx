@@ -3,7 +3,13 @@ import s from './inventoryBoard.module.scss';
 import InventoryItem from './InventoryItem/InventoryItem';
 import InventoryForm from './InventoryForm/InventoryForm';
 
-const InventoryBoard = ({ data, location, childNodes, forceUpdate }) => {
+const InventoryBoard = ({
+	data,
+	location,
+	childNodes,
+	forceUpdate,
+	setIsEmpty,
+}) => {
 	const [placeInventory, setPlaceInventory] = React.useState([]);
 	const [onCreate, setOnCreate] = React.useState(false);
 
@@ -29,6 +35,12 @@ const InventoryBoard = ({ data, location, childNodes, forceUpdate }) => {
 					return el;
 				}
 			});
+
+			if (filtered.length === 0) {
+				setIsEmpty(true);
+			} else {
+				setIsEmpty(false);
+			}
 			return filtered;
 		}
 	};
